@@ -1,0 +1,19 @@
+﻿@model List<ClienteApiDepartamentosEmpleadoMultiple.Models.Departamentos>
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Departamentos</h2>
+
+@using (Html.BeginForm("Empleados","Hospital",FormMethod.Post))
+{
+    <select name="departamentos" size="5" multiple>
+        @foreach(var dept in Model)
+        {
+            <option value="@dept.Numero">@dept.Nombre</option>
+        }
+    </select>
+    <hr />
+    <button type="submit" class="btn-success">Mostrar Empleados</button>
+}
+
